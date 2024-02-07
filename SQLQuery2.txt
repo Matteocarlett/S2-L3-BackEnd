@@ -1,0 +1,64 @@
+SELECT COUNT(*) FROM Orders;
+
+
+
+SELECT COUNT(*) FROM Employees;
+
+
+
+SELECT COUNT(*) FROM Employees
+WHERE City='London';
+
+
+
+SELECT AVG(Freight) 
+FROM Orders;
+
+
+
+SELECT AVG(Freight) 
+FROM Orders
+WHERE CustomerID='BOTTM';
+
+
+
+SELECT CustomerID, SUM(Freight)
+FROM Orders
+GROUP BY CustomerID;
+
+
+
+SELECT COUNT(*) , City
+FROM Customers 
+GROUP BY City;
+
+
+
+SELECT OrderId, SUM (UnitPrice*Quantity)
+FROM [Order Details]
+GROUP BY OrderID;
+
+
+
+SELECT OrderId, SUM (UnitPrice*Quantity)
+FROM [Order Details]
+GROUP BY OrderID
+HAVING OrderID=10248;
+
+
+
+SELECT COUNT(*) AS NumeroProdotti , CategoryID 
+FROM Products
+GROUP BY CategoryID;
+
+
+
+SELECT COUNT(*), ShipCountry
+FROM Orders
+GROUP BY ShipCountry;
+
+
+
+SELECT AVG(Freight), ShipCountry
+FROM Orders
+GROUP BY ShipCountry;
